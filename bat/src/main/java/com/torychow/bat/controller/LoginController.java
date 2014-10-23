@@ -11,10 +11,12 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.torychow.bat.exception.CodeInfoException;
 import com.torychow.bat.service.UserService;
 
 
@@ -30,6 +32,9 @@ public class LoginController extends BaseController {
 			@RequestParam(value = "password") String password)
 			throws Exception {
 		System.out.println("haha");
+		if(StringUtils.isBlank(name)||StringUtils.isBlank(password)){
+			throw new CodeInfoException("账号或密码不允许为空！");
+		}
 		this.success(response);
 	}
 	
