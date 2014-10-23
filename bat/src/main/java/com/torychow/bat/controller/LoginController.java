@@ -35,6 +35,7 @@ public class LoginController extends BaseController {
 		if(StringUtils.isBlank(name)||StringUtils.isBlank(password)){
 			throw new CodeInfoException("账号或密码不允许为空！");
 		}
+		String jpql="select o from User o where o.sUserName=?";
 		this.success(response);
 	}
 	
