@@ -16,7 +16,7 @@ public class UserServiceImpl implements UserService {
 
 	public void register(String sUserName, String sUserEmail,
 			String sUserPassword, String sUserPasswordConfirm) {
-		if(sUserPassword.equals(sUserPasswordConfirm)){
+		if(!sUserPassword.equals(sUserPasswordConfirm)){
 			throw new CodeInfoException("两次密码输入不一样！");
 		}
 		User user=new User();
