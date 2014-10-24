@@ -1,3 +1,3 @@
-$(document).ready(function(){
-  alert('this is website');
+$(document).ready(function() {
+	alert('this is website');
 })
