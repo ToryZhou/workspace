@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	page.getWebsite();
-})
+});
 
 var getData = (function() {
 	function sendAjax(url, data, success, fail, type, closeLoading) {
@@ -46,7 +46,7 @@ var getData = (function() {
 			var url = '/Website/query.zt';
 			sendAjax(url, data, success, fail, 'POST');
 		}
-	}
+	};
 
 })();
 
@@ -54,8 +54,9 @@ var getData = (function() {
 var page = {
 	getWebsite : function() {
 		getData.getWebsite({}, function(data) {
-			var code = data.code;
-			var codeInfo = data.codeInfo;
+			if(0!=data.code){
+				alert(data.codeInfo);
+			}
 			var html = [];
 			var _d = data.pagenation.entityList;
 			html.push('<input type="button" value="添加" onclick="page.show(\'light\');" /> <br /><br />');
@@ -65,7 +66,7 @@ var page = {
 				html.push('<br /><br />');
 			}
 			$('.myList').html(html.join(''));
-		})
+		});
 	},
 	show : function(tag) {
 		var light = document.getElementById(tag);
@@ -79,4 +80,4 @@ var page = {
 		light.style.display = 'none';
 		fade.style.display = 'none';
 	}
-}
+};
