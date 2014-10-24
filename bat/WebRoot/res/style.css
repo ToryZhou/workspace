@@ -1,0 +1,270 @@
+
+.wCenterCon1 {
+    width: 100%;
+}
+.myList {
+    margin: auto;
+    width: 1024px;
+}
+.userInfo {
+    margin: auto;
+    width: 1024px;
+}
+.line {
+    border: 1px solid #CCCCCC;
+    cursor: pointer;
+    float: left;
+    height: auto;
+    padding: 5px 10px;
+    width: 65%;
+}
+.View {
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+    width: 100%;
+}
+.View .light {
+    border-radius: 50%;
+    float: left;
+    height: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 10px;
+}
+.light.green {
+    background: none repeat scroll 0 0 #008000;
+}
+.light.red {
+    background: none repeat scroll 0 0 #FF0000;
+}
+.light.orange {
+    background: none repeat scroll 0 0 #FFA500;
+}
+.light.grey {
+    background: none repeat scroll 0 0 #EEEEEE;
+}
+.View .system {
+    height: 20px;
+    position: absolute;
+    right: 1px;
+    top: 0;
+}
+.View .system.windows {
+}
+.View .system.linux {
+}
+.ViewMain {
+    display: none;
+    width: 100%;
+}
+.ViewMain .description{width:100%;margin: 10px auto 10px auto;}
+
+.ViewMainIn {
+    border: 1px solid #CCCCCC;
+    width: 100%;
+}
+.ViewMain .menu {
+    height: 30px;
+    width: 100%;
+}
+.ViewMain .menu a {
+    background: none repeat scroll 0 0 #FBFBFB;
+    border-bottom: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    color: #333333;
+    display: block;
+    float: left;
+    line-height: 28px;
+    padding: 0 15px;
+    text-decoration: none;
+}
+.ViewMain .menu a.functions {
+    border: 1px solid #CCCCCC;
+    float: right;
+}
+
+.ViewMain .menu a.current {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: medium none;
+}
+.ViewMain .ViewContent {
+    display: none;
+    padding: 10px;
+}
+.ViewMain .ViewContent .ViewLine {
+    position: relative;
+    width: 100%;
+}
+.ViewMain .ViewContent .ViewLine .functions {
+    position: absolute;
+    right: 1px;
+    top: 0;
+}
+.ViewMain .ViewContent .ViewLine .functions a {
+    padding: 0 5px;
+}
+.ViewMain .ViewContent .ViewLine .functions span {
+    float: left;
+    width: 80px;
+    display: block;
+    text-align: center;
+}
+.ViewMain .ViewContent .ViewLine .light {
+    border-radius: 50%;
+    float: left;
+    height: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    width: 10px;
+}
+.ViewBlock span {
+    display: block;
+    float: left;
+    width: 45%;
+}
+.clear {
+    clear: both;
+    float: none;
+    height: 0;
+}
+.line.current {
+    border: 1px solid #999999;
+}
+.line.hover {
+    border: 1px solid #999999;
+}
+.line.current .ViewMain {
+    display: block;
+}
+
+.navTitle{
+    position: relative;
+    width: 100%;
+    display: none;
+}
+.navTitle .title{
+    text-indent: 30px;
+    margin-bottom: 0;
+}
+.navTitle .functions {
+    position: absolute;
+    right: 1px;
+    top: 0;
+}
+.navTitle .functions p{
+    display: block;
+    float: left;
+    margin: 0;
+    width: 80px;
+}
+
+.mask{width:100%;height:100%;background: #000;opacity: 0.5;z-index: 1000;position: absolute;top:0;left:0;display: none;}
+
+.login{
+    width:400px;
+    height:170px;
+    position: absolute;
+    top:45%;
+    left:35%;
+    z-index: 1100;
+    display: none;
+    background: #fff;
+}
+.SecondLogin{
+    width:330px;
+}
+
+.login .loginLine{
+    width:80%;
+    height:40px;
+    margin: auto;
+}
+.login .mT30{margin-top: 30px;}
+.login .loginLine p{
+    width:25%;
+    float: left;
+    display: block;
+    margin:0;
+}
+.login .loginLine input{
+    width:70%;
+    float: left;
+    display: block;
+}
+.login .loginF{
+    width:100%;
+}
+.login .loginBTN{
+    width:80%;
+    margin: 10px auto;
+    display: block;
+    background: orange;
+    color:#fff;
+    text-decoration: none;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+}
+.SecondLogin .loginLine input{
+    width:100%;
+}
+
+
+.popCMD{
+    width:800px;
+    position: absolute;
+    top:10%;
+    left:25%;
+    background: #fff;
+    border-bottom: none;
+    z-index: 1100;
+    display: none;
+}
+.popCMD .cmdView{
+    width:100%;
+    background: #FFF;
+    color:#000;
+    height:342px;
+    border: 2px solid #000;
+    overflow: auto;
+}
+.popCMD .cmdView pre{
+    padding:0px;
+    width:90%;
+    margin: auto;
+}
+.popCMD .cmdLine{
+    width:100%;
+    background: #FFF;
+    color:#000;
+    height:40px;
+    border: 2px solid #000;
+    border-top: none;
+}
+.popCMD .cmdLine input{
+    height:100%;
+    width:80%;
+    background: #FFF;
+    color:#000;
+    display: block;
+    float: left;
+    text-indent: 10px;
+    border: none;
+    margin: 0;
+    padding:0;
+}
+.popCMD .cmdLine a{
+    width:9.5%;
+    height: 100%;
+    display: block;
+    float: left;
+    line-height: 40px;
+    border:1px solid #000;
+    border-top: none;
+    border-bottom: none;
+    text-decoration: none;
+    background: #efefef;
+    color:#000;
+    text-align: center;
+}
