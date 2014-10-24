@@ -50,6 +50,7 @@ var getData = (function() {
 
 })();
 
+
 var page = {
 	getWebsite : function() {
 		getData.getWebsite({}, function(data) {
@@ -57,6 +58,7 @@ var page = {
 			var codeInfo = data.codeInfo;
 			var html = [];
 			var _d = data.pagenation.entityList;
+			html.push('<input type="button" value="添加" onclick="page.show(\'light\');" /> <br /><br />');
 			for ( var i = 0, max = _d.length; i < max; i++) {
 				html.push('<a target="_blank" href="' + _d[i].sWebsiteUrl
 						+ '">' + _d[i].sWebsiteName + '</a>');
@@ -64,5 +66,17 @@ var page = {
 			}
 			$('.myList').html(html.join(''));
 		})
+	},
+	show : function(tag) {
+		var light = document.getElementById(tag);
+		var fade = document.getElementById('fade');
+		light.style.display = 'block';
+		fade.style.display = 'block';
+	},
+	hide : function(tag) {
+		var light = document.getElementById(tag);
+		var fade = document.getElementById('fade');
+		light.style.display = 'none';
+		fade.style.display = 'none';
 	}
 }
