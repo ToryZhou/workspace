@@ -17,7 +17,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-
 public class User {
 	private Integer nUserId;
 	private String sUserName;

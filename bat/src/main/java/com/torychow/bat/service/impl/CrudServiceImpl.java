@@ -29,7 +29,7 @@ public class CrudServiceImpl implements CrudService {
 	public List<Object> saveOrUpdate(String sParameters, String entity)
 			throws Exception {
 		Class<?> clazz = Class
-				.forName("com.snail.mina.bean." + entity);
+				.forName("com.torychow.bat.bean." + entity);
 		List<? extends Object> list4Json = JsonUtil.getList4Json(sParameters,
 				clazz);
 		List<Object> objectList = new ArrayList<Object>();
@@ -51,7 +51,7 @@ public class CrudServiceImpl implements CrudService {
 			throws ClassNotFoundException, InstantiationException,
 			IllegalAccessException {
 		Class<?> clazz = Class
-				.forName("com.snail.mina.bean." + entity);
+				.forName("com.torychow.bat.bean." + entity);
 		baseService.remove(clazz, nIds);
 	}
 
@@ -59,7 +59,7 @@ public class CrudServiceImpl implements CrudService {
 			String orderJson, Integer nPageSize, Integer nCurrentPage,
 			String likeJson) throws InstantiationException,
 			IllegalAccessException, ClassNotFoundException {
-		Class<?> clazz = Class.forName("com.snail.mina.bean." + entity);
+		Class<?> clazz = Class.forName("com.torychow.bat.bean." + entity);
 		List<String> joinList = new ArrayList<String>();
 		HashMap<String, Object> whereMap = null;
 		LinkedHashMap<Object, Object> joinMap = null;// LinkedHashMap用Iterator遍历时记录了插入顺序
