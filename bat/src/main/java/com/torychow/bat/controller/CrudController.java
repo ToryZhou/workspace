@@ -3,6 +3,7 @@ package com.torychow.bat.controller;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -23,6 +24,8 @@ public class CrudController extends BaseController {
 	private CrudService crudService;
 	@Resource
 	private HttpSession httpSession;
+	@Resource
+	private HttpServletRequest request;
 
 	@RequestMapping(value = "/{entity}/saveOrUpdate")
 	public void saveOrUpdate(

@@ -45,6 +45,14 @@ var getData = (function() {
 		getWebsite : function(data, success, fail) {
 			var url = '/Website/query.zt';
 			sendAjax(url, data, success, fail, 'POST');
+		},
+		saveWebsite : function(data, success, fail) {
+			var url = '/Website/saveOrUpdate.zt';
+			sendAjax(url, data, success, fail, 'POST');
+		},
+		deleteWebsite : function(data, success, fail) {
+			var url = '/Website/delete.zt';
+			sendAjax(url, data, success, fail, 'POST');
 		}
 	};
 
@@ -59,13 +67,30 @@ var page = {
 			}
 			var html = [];
 			var _d = data.pagenation.entityList;
-			html.push('<input type="button" value="添加" onclick="page.show(\'light\');" /> <br /><br />');
+			html.push('<table>');
 			for ( var i = 0, max = _d.length; i < max; i++) {
-				html.push('<a target="_blank" href="' + _d[i].sWebsiteUrl
-						+ '">' + _d[i].sWebsiteName + '</a>');
-				html.push('<br /><br />');
+				html.push('<tr>');
+				html.push('<td><a target="_blank" href="' + _d[i].sWebsiteUrl
+						+ '">' + _d[i].sWebsiteName + '</a></td>');
+				html.push('<td><input type="button" value="删除" onclick="page.deleteWebsite('+_d[i].nWebsiteId+')"></td />');
+				html.push('</tr>');
 			}
+			html.push('</table>');
+			html.push('<input type="button" value="添加" onclick="page.show(\'light\');" /> <br /><br />');
 			$('.myList').html(html.join(''));
+		});
+	},
+	saveWebsite:function(){
+		var name = document.getElementById('sWebsiteName').value;
+		var url = document.getElementById('sWebsiteUrl').value;
+		getData.saveWebsite({sParameters:'[{"sWebsiteName":"'+name+'","sWebsiteUrl":"'+url+'"}]'},function(data){
+			page.hide('light');
+			page.getWebsite();
+		});
+	},
+	deleteWebsite:function(id){
+		getData.deleteWebsite({nIds:id},function(data){
+			page.getWebsite();
 		});
 	},
 	show : function(tag) {
@@ -73,7 +98,20 @@ var page = {
 		var fade = document.getElementById('fade');
 		light.style.display = 'block';
 		fade.style.display = 'block';
+		var html=[];
+		html.push("<p>");
+		html.push("名称：<input id='sWebsiteName' type='text' style='width:300px;' />");
+		html.push("</p>");
+		html.push("<p>");
+		html.push("网址：<input id='sWebsiteUrl' type='text' style='width:300px;' />");
+		html.push("</p>");
+		html.push("<p>");
+		html.push("<input type='button' value='确定' onclick='page.saveWebsite();'/>");
+		html.push("<input type='button' value='取消' onclick='page.hide(\"light\");'/>");
+		html.push("</p>");
+		$('.con').html(html.join(''));
 	},
+	
 	hide : function(tag) {
 		var light = document.getElementById(tag);
 		var fade = document.getElementById('fade');
