@@ -8,7 +8,7 @@ var getData = (function() {
 		if (type == 'POST') {
 			// data = JSON.stringify(data);
 		}
-		var BASEURL = '/bat';
+		var BASEURL = '';
 		$.ajax({
 			url : BASEURL + url,
 			cache : false,
