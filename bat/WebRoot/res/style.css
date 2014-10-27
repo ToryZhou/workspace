@@ -52,3 +52,19 @@
 	text-indent: 1.5pc;
 	line-height: 21px
 }
+
+.message {
+    margin: auto;
+    width: 1024px;
+}
+.textarea{
+	    border:1px solid #999;
+       font-size:12px;
+       font-family: Verdana, Arial, Helvetica, sans-serif;
+       padding:1px;
+       height:150px;
+       overflow:auto;
+       width:100%;
+       text-align:left;
+       padding:5px;
+}

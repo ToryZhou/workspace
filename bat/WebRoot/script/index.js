@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	page.getWebsite();
+	page.message();
 });
 
 var getData = (function() {
@@ -53,6 +54,10 @@ var getData = (function() {
 		deleteWebsite : function(data, success, fail) {
 			var url = '/Website/delete.zt';
 			sendAjax(url, data, success, fail, 'POST');
+		},
+		saveMessage : function(data, success, fail) {
+			var url = '/Message/saveOrUpdate.zt';
+			sendAjax(url, data, success, fail, 'POST');
 		}
 	};
 
@@ -93,6 +98,13 @@ var page = {
 			page.getWebsite();
 		});
 	},
+	saveMessage:function(){
+		var textarea = $('.textarea').val();
+		getData.saveMessage({sParameters:'[{"sMessageContent":"'+textarea+'"}]'},function(data){
+			alert("success!");
+			page.getWebsite();
+		});
+	},
 	show : function(tag) {
 		var light = document.getElementById(tag);
 		var fade = document.getElementById('fade');
@@ -117,5 +129,13 @@ var page = {
 		var fade = document.getElementById('fade');
 		light.style.display = 'none';
 		fade.style.display = 'none';
+	},
+	
+	message: function(){
+		var html=[];
+		html.push("<p>留言：</p>");
+		html.push("<p><textarea class='textarea' /></p>");
+		html.push("<p><input type='button' value='提交' onclick='page.saveMessage();'/></p>");
+		$('.message').html(html.join(''));
 	}
 };
