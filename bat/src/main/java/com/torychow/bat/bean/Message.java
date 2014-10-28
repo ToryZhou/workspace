@@ -22,26 +22,40 @@ import com.torychow.bat.util.CommonUtils;
 public class Message {
 	private Integer nMessageId;
 	private String sMessageContent;
-	private String sMessageTime=CommonUtils.getNowTime();
-	
+	private Boolean isMessagePrivate;
+	private String sMessageTime = CommonUtils.getNowTime();
+
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(unique = true, nullable = false)
 	public Integer getnMessageId() {
 		return nMessageId;
 	}
+
 	public void setnMessageId(Integer nMessageId) {
 		this.nMessageId = nMessageId;
 	}
+
 	public String getsMessageContent() {
 		return sMessageContent;
 	}
+
 	public void setsMessageContent(String sMessageContent) {
 		this.sMessageContent = sMessageContent;
 	}
+
+	public Boolean getIsMessagePrivate() {
+		return isMessagePrivate;
+	}
+
+	public void setIsMessagePrivate(Boolean isMessagePrivate) {
+		this.isMessagePrivate = isMessagePrivate;
+	}
+
 	public String getsMessageTime() {
 		return sMessageTime;
 	}
+
 	public void setsMessageTime(String sMessageTime) {
 		this.sMessageTime = sMessageTime;
 	}

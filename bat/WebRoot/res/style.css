@@ -57,6 +57,15 @@
     margin: auto;
     width: 1024px;
 }
+
+.messageCheckbox {
+}
+
+.messageList {
+    margin: auto;
+    width: 1024px;
+}
+
 .textarea{
 	    border:1px solid #999;
        font-size:12px;
