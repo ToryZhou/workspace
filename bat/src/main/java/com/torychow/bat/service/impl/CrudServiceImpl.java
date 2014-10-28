@@ -57,11 +57,10 @@ public class CrudServiceImpl implements CrudService {
 
 	public Pagenation<?> query(String entity, String whereJson,
 			String orderJson, Integer nPageSize, Integer nCurrentPage,
-			String likeJson) throws InstantiationException,
+			String likeJson,HashMap<String, Object> whereMap) throws InstantiationException,
 			IllegalAccessException, ClassNotFoundException {
 		Class<?> clazz = Class.forName("com.torychow.bat.bean." + entity);
 		List<String> joinList = new ArrayList<String>();
-		HashMap<String, Object> whereMap = null;
 		LinkedHashMap<Object, Object> joinMap = null;// LinkedHashMap用Iterator遍历时记录了插入顺序
 		Pagenation<?> pagenation = null;
 		String whereJpql = null;

@@ -62,7 +62,7 @@ public class CrudController extends BaseController {
 		ResponseMap map = new ResponseMap();
 		String[] include=null;
 		String[] exclude=null;
-		map.put("pagenation", crudService.query(entity, whereJson, orderJson, nPageSize, nCurrentPage,likeJson));
+		map.put("pagenation", crudService.query(entity, whereJson, orderJson, nPageSize, nCurrentPage,likeJson,null));
 		map.success();
 		this.getWriter(response).write(map.toJson(include,exclude));
 	}
