@@ -3,6 +3,7 @@
 }
 
 .myList {
+	position: relative;
 	margin: auto;
 	width: 1024px;
 }
@@ -93,6 +94,54 @@
 	font-family: ¿¬Ìå, sans-serif;
 }
 
+/* base styles */
+* {margin:0; padding:0;}
+img {border:0;}
+.clear {clear:both; line-height:0; height:0; font-size:1px;}
+.marg {width:916px; margin:0 auto;}
+body {font:13px Arial, Helvetica, sans-serif; color:#000000;}
+
+.top {
+	background: url(../images/top.jpg) repeat-x top;
+	width: 100%;
+	height: 175px;
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+
+.mid {
+background: url(../images/bg.png) repeat top;
+width: 100%;
+height: 1108px;
+top: 174px;
+left: 0;
+position: absolute;
+}
+
+.bottom {
+background: url(../images/bottom.jpg) repeat-x top;
+width: 100%;
+height: 389px;
+top: 1109px;
+position: absolute;
+left: 0;
+}
+* {
+margin: 0;
+padding: 0;
+}
+
+a:hover {
+text-decoration: underline;
+}
+a {
+text-decoration: none;
+color: #D1EEEE;
+outline: none;
+cursor: pointer;
+}
+
 /* footer section */
 .footer {
 	padding: 25px 0 0 33px;
@@ -172,29 +221,5 @@
 
 .foot a {
 	color: #ddd;
-}
-
-.top {
-	background: url(../images/top.jpg) repeat-x top;
-	width: 100%;
-	height: 175px;
-	top: 0;
-	left: 0;
-	position: absolute;
-}
-
-* {
-margin: 0;
-padding: 0;
-}
-
-a:hover {
-text-decoration: underline;
-}
-a {
-text-decoration: none;
-color: #0f0;
-outline: none;
-cursor: pointer;
 }
 
