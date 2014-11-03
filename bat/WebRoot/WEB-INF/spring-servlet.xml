@@ -20,4 +20,5 @@
 	<bean
 		class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
 	<import resource="applicationContext.xml" />
+	<import resource="spring-mina.xml" />
 </beans>
