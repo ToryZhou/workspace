@@ -21,14 +21,17 @@
 	<bean id="batTransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="batManagerFactory" />
 	</bean>
-	
+
 	<context:annotation-config />
 	<context:component-scan base-package="com.torychow.bat.bean.*" />
 	<context:component-scan base-package="com.torychow.bat.dao.*" />
 	<context:component-scan base-package="com.torychow.bat.service.*" />
 	<context:component-scan base-package="com.torychow.bat.controller" />
-	
-	<!-- <mvc:interceptors>
-		<bean class="com.torychow.bat.interceptor.LoginInterceptor"></bean>
-	</mvc:interceptors> -->
+
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/user/*" />
+			<bean class="com.torychow.bat.interceptor.LoginInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
 </beans>

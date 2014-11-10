@@ -45,4 +45,13 @@ public class UserServiceImpl implements UserService {
 		 }
 		 return null;
 	}
+	
+	public User getUser(String sUserEmail,String sUserPassword){
+		String jpql="select o from User o where o.sUserEmail=? and o.sUserPassword=?";
+		 Object singleResultByJpql = baseService.getSingleResultByJpql(jpql, new Object[]{sUserEmail,sUserPassword});
+		 if(null!=singleResultByJpql){
+			 return (User) singleResultByJpql;
+		 }
+		 return null;
+	}
 }
