@@ -1,0 +1,41 @@
+.main {
+	padding: 30px 0 0 0;
+}
+
+.marg {
+	width: 916px;
+	margin: 0 auto;
+}
+
+.con {
+	position: relative;
+	padding: 5px 0 18px 0;
+}
+
+.con_t {
+	background: url(../images/con_t.png) no-repeat top;
+	position: relative;
+	height: 458px;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.con_bg {
+	background: url(../images/con_bg.png) repeat-y;
+	min-height: 470px;
+}
+
+.con_wrap {
+	z-index: 1;
+	padding: 30px;
+}
+
+.con_b {
+	background: url(../images/con_b.png) no-repeat bottom;
+	position: relative;
+	height: 18px;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+}
