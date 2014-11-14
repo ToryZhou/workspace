@@ -35,4 +35,8 @@
 		<servlet-name>spring</servlet-name>
 		<url-pattern>*.zt</url-pattern>
 	</servlet-mapping>
+	
+	<welcome-file-list>
+		<welcome-file>/site/company/index.html</welcome-file>
+	</welcome-file-list>
 </web-app>
